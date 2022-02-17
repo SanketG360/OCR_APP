@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Optical character recognition</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="sty.css" type="text/css">
+    </head>
+    <header>
+        <h1>Optical Character Recognition</h1>
+    </header>
+    <body>
+        <marquee 
+				direction="left"
+				loop="">
+                <h2>
+                    <p id="instructions">Upload your image(s), select your language, and press "Run" to extract text. Copy the text from the box below or save the OCR results to a .txt file.</p>
+                </h2>		
+        </marquee>
+<h5>
+<forms>
+<input type="file" class = "bt" id="fileElementId" name="files[]" size="20" multiple="multiple" accept="image/*" />
+</h5>
+</forms>
+<h3>
+<form method="post">
+    <label for="dropdown">Document Language:</label>
+    <select id="dropdown" name="dropdown" onchange="changeHiddenInput(this)">
+        <option value="eng">English</option>
+        <option value="rus">Russian</option>
+        <option value="ara">Arabic</option>
+        <option value="bul">Bulgarian</option>
+        <option value="ces">Czech</option>
+        <option value="chi_sim">Chinese - Simplified</option>
+        <option value="chi_tra">Chinese - Traditional</option>
+        <option value="fra">French</option>
+        <option value="deu">German</option>
+        <option value="heb">Hebrew</option>
+        <option value="ita">Italian</option>
+        <option value="jpn">Japanese</option>
+        <option value="lat">Latin</option>
+        <option value="pol">Polish</option>
+        <option value="por">Portuguese</option>
+        <option value="san">Sanskrit</option>
+        <option value="tam">Tamil</option>
+        <option value="ukr">Ukrainian</option>
+    </select>
+    <input type="hidden" name="hiddenInput" id="hiddenInput" value="" />
+</form>
+<br />
+<input id="runOCR" type="button" class="btn" value="Run OCR!"  />
+<input id="clr" type="button" class="btn" value="Reset" onclick="javascript:eraseText();" />
+
+<br />
+<br />
+<div id="result"></div>
+<div id="ocr_results"><textarea id="TextArea"></textarea></div>
+<div id="clear"></div>
+</h3>
+<h5>
+<div id="ocr_status"> </div>
+</h5>
+<h3>
+<div class="form-group">
+    <label for="input-fileName">Filename:</label>
+    <input type="text" class="form-control" id="input-fileName" value="my_OCR" placeholder="Enter filename">
+    <button id="btn-save" type="submit" class="btn">Save to file</button>
+</div>
+</h3>
+</body>
+<script src="https://cdn.rawgit.com/naptha/tesseract.js/0.2.0/dist/tesseract.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/FileSaver.js"></script>
+<script src="OCR_in_browser.js"></script>
+</html>
