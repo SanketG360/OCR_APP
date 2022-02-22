@@ -8,6 +8,6 @@ A web interface for OCR of Multiple Language. It uses tesseract,js module in the
 * Tesseractjs - To perform the OCR. 
 * Filesaverjs - To save the OCR results as a .txt file. 
 
-#Output
+# Output
 website link : https://purple-beach-0bb48e610.1.azurestaticapps.net/
 
